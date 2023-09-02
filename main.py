@@ -83,7 +83,6 @@ def get_music_recommendations(tracks):
     except Exception as e:
         print(f"Error generating recommendations: {e}")
         raise e
-        return None
 
 
 def post_suggestion_to_slack(suggestion):
@@ -93,6 +92,7 @@ def post_suggestion_to_slack(suggestion):
         )
     except SlackApiError as e:
         print(f"Error posting message to Slack: {e}")
+        raise e
 
 
 def save_previous_tracks(tracks):
