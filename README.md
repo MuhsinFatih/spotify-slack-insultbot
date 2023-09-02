@@ -9,9 +9,14 @@ https://medium.com/applied-data-science/how-to-build-you-own-slack-bot-714283fd1
 
 - Get Spotify and OpenAI API tokens and add them to the `.env` file
 - Fill out the other settings in `.env`
+- Install python packages:
+
+```sh
+pip install -r requirements.txt
+```
 
 ## Run:
-```
+```sh
 export $(cat .env | xargs)
 python main.py
 ```
