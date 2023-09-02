@@ -39,9 +39,6 @@ openai.api_key = OPENAI_API_KEY
 # Connect to Slack API
 slack_client = WebClient(token=SLACK_API_TOKEN)
 
-# Your Spotify playlist ID and Slack channel
-
-
 def get_playlist_tracks(playlist_id):
     results = spotify.playlist_tracks(playlist_id)
     tracks = results["items"]
@@ -134,9 +131,9 @@ def recommend():
     suggestion = get_music_recommendations(tracks)
     print(f"suggestion: { suggestion }")
 
-    # if suggestion:
-    #     # Post the suggestion to the Slack channel
-    #     post_suggestion_to_slack(suggestion)
+    if suggestion:
+        # Post the suggestion to the Slack channel
+        post_suggestion_to_slack(suggestion)
 
 
 if __name__ == "__main__":
